@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zhCN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>大数据图片热点以及关键帧动画</title>
+
+    <style>
+        body {
+            background-color: rgb(73, 69, 69);
+        }
+
+        .map {
+            position: relative;
+            width: 747px;
+            height: 617px;
+            background: url(./img/map.png) no-repeat;
+            margin: 0 auto;
+        }
+
+        .beijing {
+            position: absolute;
+            left: 566px;
+            top: 227px;
+            /* background-color: pink; */
+        }
+
+        .dian {
+            width: 8px;
+            height: 8px;
+            background-color: #09f;
+            border-radius: 50%;
+        }
+
+        .beijing div[class^="bowen"] {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            box-shadow: 0 0 3px #009dfd;
+            animation: bowen 1.2s linear infinite;
+        }
+
+        .beijing div.bowen1 {
+            animation-delay: 0s;
+        }
+
+        .beijing div.bowen2 {
+            animation-delay: .4s;
+        }
+
+        .beijing div.bowen3 {
+            animation-delay: .8s;
+        }
+
+        @keyframes bowen {
+            0% {}
+
+            70% {
+                transform: scale(8);
+                opacity: 1;
+            }
+
+            100% {
+                transform: scale(10);
+                opacity: 0;
+            }
+        }
+
+
+        .xiong {
+            position: absolute;
+            width: 200px;
+            height: 100px;
+            background-image: url(./img/bear.png);
+            animation: bearrun 0.8s steps(8) infinite, move 3s linear forwards;
+        }
+
+        @keyframes bearrun {
+            0% {
+                background-position: 0 0;
+            }
+
+            100% {
+                background-position: -1600px 0;
+            }
+        }
+
+        @keyframes move {
+            0% {
+                left: 0;
+            }
+
+            100% {
+                left: 50%;
+                transform: translate(-50%);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="map">
+        <div class="beijing">
+            <div class="dian"></div>
+            <div class="bowen1"></div>
+            <div class="bowen2"></div>
+            <div class="bowen3"></div>
+        </div>
+    </div>
+
+    <div class="xiong">
+
+    </div>
+</body>
+
+</html>

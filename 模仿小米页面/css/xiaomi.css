@@ -1,0 +1,364 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+.clearfix:after {
+    content: "";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+body {
+    height: 2000px;
+}
+
+.header {
+    width: 100%;
+}
+
+.header .topbanner a {
+    display: block;
+    height: 120px;
+    background: url(../img/tiobanner.jpg) no-repeat;
+    background-size: auto 120px;
+    background-position: 50%;
+}
+
+.header .sitebar {
+    position: relative;
+    font-size: 12px;
+    color: #b0b0b0;
+    background: #333;
+}
+
+.header .sitebar .container {
+    width: 1226px;
+    margin: 0 auto;
+}
+
+.header .sitebar .nav {
+    height: 40px;
+    line-height: 40px;
+    float: left;
+}
+
+.header .nav a {
+    display: inline-block;
+    height: 40px;
+    color: #b0b0b0;
+}
+
+.header .nav a:hover {
+    color: #fff;
+}
+
+.header .sep {
+    margin: 0 .3em;
+    color: #424242;
+}
+
+.header .car {
+    position: relative;
+    float: right;
+    width: 120px;
+    height: 40px;
+    line-height: 40px;
+    margin-left: 15px;
+    font-size: 12px;
+}
+
+.header .car a {
+    display: block;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    color: #b0b0b0;
+    background: #424242;
+}
+
+.header .car a:hover {
+    background: #000000;
+    color: #fff;
+}
+
+.header .user {
+    float: right;
+    height: 40px;
+    line-height: 40px;
+}
+
+.header .user a {
+    color: #b0b0b0;
+    line-height: 40px;
+    display: inline-block;
+}
+
+.header .user a:hover {
+    color: #fff;
+}
+
+.siteheader {
+    height: 100px;
+}
+
+.siteheader .container {
+    position: relative;
+    width: 1227px;
+    margin: 0 auto;
+}
+
+.logo {
+    float: left;
+    width: 62px;
+    margin-top: 22px;
+}
+
+.logo a {
+    position: relative;
+    display: block;
+    width: 55px;
+    height: 55px;
+    /* 图标丝滑移动的关键 */
+    /* overflow: hidden; */
+    background-color: #ff6700;
+}
+
+.logo a::before,
+.logo a::after,
+.logo a:hover::before,
+.logo a:hover::after {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    width: 55px;
+    height: 55px;
+    content: "";
+    transition: all 0.5s;
+}
+
+.logo a::before {
+    background: url(../img/mi-logo.png) no-repeat 50% 50%;
+    opacity: 1;
+}
+
+.logo a:hover::before {
+    background: url(../img/mi-logo.png) no-repeat 50% 50%;
+    opacity: 0;
+    margin-left: -55px;
+}
+
+.logo a::after {
+    background: url(../img/mi-home.png);
+    opacity: 0;
+    margin-left: 55px;
+}
+
+.logo a:hover::after {
+    background: url(../img/mi-home.png) no-repeat 50% 50%;
+    opacity: 1;
+    margin-left: 0;
+}
+
+.headernav {
+    float: left;
+    width: 850px;
+    height: 100px;
+    color: #333;
+    /* background-color: pink; */
+}
+
+.headernav>ul>li {
+    float: left;
+}
+
+.headernav .adimg {
+    position: relative;
+    width: 165px;
+    padding-right: 15px;
+    height: 100px;
+    line-height: 100px;
+    background: url(../img/adimg.gif) no-repeat 50% 50%;
+}
+
+.headernav li a {
+    display: inline-block;
+    height: 100px;
+    line-height: 36px;
+    color: #333;
+    padding: 26px 10px 38px;
+}
+
+.headernav li a:hover {
+    color: #ff6700;
+}
+
+.headerserach {
+    float: right;
+    width: 296px;
+    margin-top: 25px;
+    color: inherit;
+}
+
+.headerserach form {
+    position: relative;
+    width: 296px;
+    height: 50px;
+}
+
+.headerserach .keywords {
+    position: absolute;
+    right: 51px;
+    top: 0;
+    border: 1px solid #e0e0e0;
+    outline: 0;
+    height: 48px;
+    width: 223px;
+    line-height: 48px;
+    font-size: 14px;
+    padding: 0 10px;
+}
+
+.headerserach .search {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2;
+    width: 52px;
+    height: 50px;
+    font-size: 24px;
+    line-height: 24px;
+    background: #fff;
+    color: #616161;
+    border: 1px solid #e0e0e0;
+    cursor: pointer;
+}
+
+.cat_nav .container {
+    position: relative;
+    width: 1226px;
+    margin: 0 auto 26px;
+    /* height: 100px; */
+    /* background-color: pink; */
+}
+
+.cat_nav .top {
+    position: relative;
+    height: 460px;
+    overflow: hidden;
+    background: url(../img/bgad.webp) no-repeat scroll center;
+}
+
+.cat_nav .cat {
+    position: absolute;
+    height: 460px;
+    width: 234px;
+    background: rgba(105, 101, 101, .5);
+    padding: 20px 0;
+}
+
+.cat_nav .cat a {
+    position: relative;
+    display: block;
+    padding-left: 30px;
+    height: 42px;
+    line-height: 42px;
+    color: #fff;
+    font-size: 14px;
+}
+
+.cat_nav .cat em {
+    position: absolute;
+    top: 12px;
+    right: 20px;
+    font-size: 16px;
+    line-height: 16px;
+}
+
+.cat_nav .cat a:hover {
+    background-color: #ff6700;
+}
+
+.cat_nav .next,
+.cat_nav .previous {
+    color: #333;
+    font-size: 26px;
+    width: 41px;
+    height: 69px;
+    line-height: 69px;
+    text-align: center;
+}
+
+.cat_nav .next:hover,
+.cat_nav .previous:hover {
+    background-color: gray;
+}
+
+.cat_nav .next {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    margin-top: -35px;
+    cursor: pointer;
+    outline: none;
+}
+
+.cat_nav .previous {
+    position: absolute;
+    left: 234px;
+    top: 50%;
+    margin-top: -35px;
+    cursor: pointer;
+    outline: none;
+}
+
+.cat_nav .pointer {
+    position: absolute;
+    bottom: 20px;
+    right: 50px;
+}
+
+.cat_nav .pointer li {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    margin: 0 2px;
+    border: 2px solid #fff;
+    border-color: hsla(0, 0%, 100%, .3);
+    border-radius: 50%;
+    overflow: hidden;
+    background: rgba(0, 0, 0, .4);
+    /* 元素透明度 */
+    opacity: 1;
+}
+
+.cat_nav .pointer .active {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    margin: 0 5px;
+    border: 2px solid #fff;
+    border-color: hsla(0, 0%, 100%, 1);
+    border-radius: 50%;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.4);
+    /* 元素透明度 */
+    opacity: 1;
+}
+
+.cat_nav .bottom {
+    margin-top: 14px;
+    height: 260px;
+    background-color: green;
+}

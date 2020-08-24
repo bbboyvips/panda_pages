@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>京东放大镜</title>
+    <style>
+        body>div {
+            margin: 0 auto;
+            width: 1500px;
+            height: 800px;
+            /* background-color: pink; */
+        }
+
+        .mask {
+            cursor: move;
+            position: relative;
+            border: 1px solid gray;
+            width: 398px;
+            height: 398px;
+        }
+
+        .mask .zhe {
+            position: absolute;
+            display: none;
+            left: 0;
+            top: 0;
+            width: 250px;
+            height: 250px;
+            background-color: yellow;
+            opacity: 0.5;
+        }
+
+        .big {
+            position: absolute;
+            left: 400px;
+            top: 0;
+            display: none;
+            border: 1px solid gray;
+            width: 550px;
+            height: 550px;
+            overflow: hidden;
+        }
+
+        .big>img {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <div class="mask">
+            <!-- 遮蔽罩 -->
+            <div class="zhe"></div>
+            <img src="./img/s3.png" alt="">
+            <div class="big">
+                <img src="./img/big.jpg" alt="">
+            </div>
+        </div>
+
+    </div>
+    <script>
+        window.onload = function () {
+            // 1.获取元素
+            var zhe = document.querySelector('.zhe');
+            var mask = document.querySelector('.mask');
+            var big = document.querySelector('.big');
+            var bigImg = document.querySelector(".big>img");
+
+            // 2.实现小图遮蔽罩功能
+            mask.addEventListener('mouseover', function () {
+                // 鼠标移入就显示遮蔽罩,显示大图
+                big.style.display = "block";
+                zhe.style.display = "block";
+            });
+            // 绑定鼠标移动事件
+            mask.addEventListener('mousemove', function (e) {
+                // 获取鼠标在 元素内 的位置
+                var x = e.pageX - mask.offsetLeft;
+                var y = e.pageY - mask.offsetTop;
+                // 设置遮蔽罩的位置
+                zhe_x = x - zhe.offsetWidth / 2;
+                zhe_y = y - zhe.offsetHeight / 2;
+                // 对遮蔽罩的位置做出限制,避免出现跑到元素外围
+                // 最大移动距离
+                zhe_max_x = mask.offsetWidth - zhe.offsetWidth;
+                zhe_max_y = mask.offsetHeight - zhe.offsetHeight;
+                zhe_x < 0 ? zhe_x = 0 : zhe_x;
+                zhe_x > zhe_max_y ? zhe_x = zhe_max_y : zhe_x;
+                zhe_y < 0 ? zhe_y = 0 : zhe_y;
+                zhe_y > zhe_max_y ? zhe_y = zhe_max_y : zhe_y;
+                //改变遮蔽罩的位置 
+                zhe.style.left = zhe_x + "px";
+                zhe.style.top = zhe_y + "px";
+                // 移动大图位置,移动的位置应该是按照两个元素大小的比例移动,所以公式为:放大镜最大移动距离/大图最大移动距离=放大镜移动位置/大图移动位置
+                // 获取大图来判断移动的最大位置
+                big_max_x = bigImg.offsetWidth - big.offsetWidth;
+                big_max_y = bigImg.offsetHeight - big.offsetHeight;
+                big_x = zhe_x * big_max_x / zhe_max_x;
+                big_y = zhe_y * big_max_y / zhe_max_y;
+                bigImg.style.left = -big_x + "px";
+                bigImg.style.top = -big_y + "px";
+
+            });
+            // 绑定鼠标移出事件
+            mask.addEventListener('mouseout', function () {
+                // 鼠标移出就隐藏遮蔽罩
+                zhe.style.display = "none";
+                big.style.display = "none";
+            });
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>京豆伪3d旋转图片</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            text-align: center;
+        }
+
+        .jd3d {
+            position: relative;
+            margin: 100px auto;
+            width: 940px;
+            height: 570px;
+            background-color: pink;
+            text-align: center;
+        }
+
+        .img-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 534px;
+            height: 534px;
+            transform: translate(-50%, -50%);
+        }
+
+        img {
+            display: none;
+            border: 0;
+            vertical-align: middle;
+            width: 534px;
+            height: 534px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>请稍等几秒(大概八秒),等图片加载完毕使用,效果更佳</h1>
+    <div class="jd3d">
+        <div class="img-content"></div>
+    </div>
+    <script>
+        window.onload = function () {
+            // document.getElementsByTagName('h1')[0].innerHTML = '加载完毕,GO~';
+            var jd3d = document.querySelector('.jd3d');
+
+            var imgContent = document.querySelector('.img-content');
+            for (var i = 1; i < 36; i++) {
+                var img = document.createElement('img');
+                img.src = './img/' + i + '.jpg'
+                imgContent.appendChild(img);
+            }
+            // 拿到图片集合
+            var imgs = document.querySelectorAll('img');
+            imgs[0].style.display = 'inline';
+
+
+            // 当鼠标移入的时候启动监听事件
+            jd3d.addEventListener('mouseenter', function () {
+                // 使用一个缓存提高性能
+                // var n_temp;
+                // 拿到图片容器宽度
+                var j_w = jd3d.offsetWidth;
+                // 获取图片容器在页面中的位置
+                var j_l = jd3d.offsetLeft;
+                // var i_t = imgContent.offsetTop;
+                jd3d.addEventListener('mousemove', function (e) {
+                    // 获取鼠标在页面的位置
+                    var m_l = e.pageX;
+                    // var m_t = e.pageY;
+                    // 鼠标在容器内的位置
+                    var l = j_l - m_l;
+                    var n = Math.ceil((j_w + l) / (j_w / imgs.length))
+                    // if (n == n_temp) {
+                    //     // 如果值一样,就什么都不做
+                    // } else {
+                    //     n_temp = n;
+                    n = n - 1;
+                    // console.log(n);
+                    n > 34 ? n = 34 : n;
+                    n < 0 ? n = 0 : n;
+                    // console.log('new n:' + n);
+                    yincang(imgs);
+                    imgs[n].style.display = 'inline';
+                });
+
+            });
+
+            // 鼠标移出,移出所有事件
+            // jd3d.addEventListener('mouseout', function () {
+            //     yincang(imgs);
+            //     imgs[0].style.display = 'inline';
+            //     jd3d.removeEventListener('mouseenter', null);
+            //     jd3d.removeEventListener('mousemove', null);
+            //     jd3d.removeEventListener('mouseout', null);
+            // });
+
+            function yincang(el) {
+                for (e of el) {
+                    e.style.display = 'none';
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

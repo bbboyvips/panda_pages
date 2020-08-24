@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小米商城 - 小米10 Pro、Redmi 10X、小米MIX Alpha，小米电视官方网站</title>
+    <link rel="stylesheet" href="./css/xiaomi.css">
+</head>
+
+<body>
+    <!-- 广告大图开始 -->
+    <div class="header">
+        <div class="topbanner">
+            <a href="#"></a>
+        </div>
+        <div class="sitebar clearfix">
+            <div class="container">
+                <div class="nav">
+                    <a href="#">小米商城</a>
+                    <span class="sep">|</span>
+                    <a href="#">MIUI</a>
+                    <span class="sep">|</span>
+                    <a href="#">loT</a>
+                    <span class="sep">|</span>
+                    <a href="#">云服务</a>
+                    <span class="sep">|</span>
+                    <a href="#">金融</a>
+                    <span class="sep">|</span>
+                    <a href="#">有品</a>
+                    <span class="sep">|</span>
+                    <a href="#">小爱开放平台</a>
+                    <span class="sep">|</span>
+                    <a href="#">企业团购</a>
+                    <span class="sep">|</span>
+                    <a href="#">资质证照</a>
+                    <span class="sep">|</span>
+                    <a href="#">协议规则</a>
+                    <span class="sep">|</span>
+                    <a href="#">下载app</a>
+                    <span class="sep">|</span>
+                    <a href="#">Select Location</a>
+                </div>
+                <div class="car">
+                    <a href="#">🛒购物车(0)</a>
+                </div>
+                <div class="user">
+                    <a href="#">登录</a>
+                    <span class="sep">|</span>
+                    <a href="#">注册</a>
+                    <span class="sep">|</span>
+                    <a href="#">消息通知</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 广告大图结束 -->
+
+    <!-- 导航栏开始 -->
+    <div class="siteheader">
+        <div class="container clearfix">
+            <div class="logo">
+                <a href="#"></a>
+            </div>
+            <div class="headernav">
+                <ul>
+                    <li class="adimg">
+                    </li>
+                    <li>
+                        <a href="#">小米手机</a>
+                    </li>
+                    <li>
+                        <a href="#">Redmi红米</a>
+                    </li>
+                    <li>
+                        <a href="#">电视</a>
+                    </li>
+                    <li>
+                        <a href="#">笔记本</a>
+                    </li>
+                    <li>
+                        <a href="#">家电</a>
+                    </li>
+                    <li>
+                        <a href="#">路由器</a>
+                    </li>
+                    <li>
+                        <a href="#">智能硬件</a>
+                    </li>
+                    <li>
+                        <a href="#">服务</a>
+                    </li>
+                    <li>
+                        <a href="#">社区</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="headerserach">
+                <form action="#">
+                    <input class="keywords" type="text" placeholder="小米10pro">
+                    <input class="search" type="submit" value="🔍">
+                </form>
+            </div>
+        </div>
+
+    </div>
+    <!-- 导航栏结束 -->
+
+    <!-- 导购菜单开始 -->
+    <div class="cat_nav">
+        <div class="container clearfix">
+            <div class="top">
+                <div class="cat">
+                    <ul>
+                        <li><a href="#">手机&nbsp;电话卡<em>👉</em></a></li>
+                        <li><a href="#">电视&nbsp;盒子<em>👉</em></a></li>
+                        <li><a href="#">笔记本&nbsp;显示器&nbsp;平板<em>👉</em></a></li>
+                        <li><a href="#">家电&nbsp;插线板<em>👉</em></a></li>
+                        <li><a href="#">出行&nbsp;穿戴<em>👉</em></a></li>
+                        <li><a href="#">智能&nbsp;路由器<em>👉</em></a></li>
+                        <li><a href="#">电源&nbsp;配件<em>👉</em></a></li>
+                        <li><a href="#">健康&nbsp;儿童<em>👉</em></a></li>
+                        <li><a href="#">耳机&nbsp;音箱<em>👉</em></a></li>
+                        <li><a href="#">生活&nbsp;箱包<em>👉</em></a></li>
+                    </ul>
+                </div>
+                <div class="previous">←</div>
+                <div class="next">→</div>
+                <div class="pointer">
+                    <ul>
+                        <li></li>
+                        <li></li>
+                        <li class="active"></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="bottom">
+            </div>
+        </div>
+    </div>
+    <!-- 导购菜单结束 -->
+    <script>
+        window.onload = function () {
+            var kd = document.getElementsByClassName("keywords")[0];
+            var sh = document.getElementsByClassName("search")[0];
+
+            kd.onclick = function () {
+                sh.style.border = "1px solid #ff6700";
+                kd.style.border = "1px solid #ff6700";
+            }
+
+            kd.onblur = function () {
+                sh.style.border = "1px solid #e0e0e0";
+                kd.style.border = "1px solid #e0e0e0";
+            }
+        }
+    </script>
+</body>
+
+</html>
