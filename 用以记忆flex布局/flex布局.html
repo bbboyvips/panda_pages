@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex布局真好玩啊</title>
+    <style>
+        .father {
+            /* 设置主轴的方向.用来设置flex容器内的子元素向哪个方向排列,
+            默认值是 row,x轴;可以使用column来让元素按照y轴排列
+            当我们设置了一个轴为主轴之后,那么另一个轴会自动被设置为侧轴 */
+            flex-direction: row;
+            /* 设置主轴上的子元素排列方式,值有:
+            flex-start 默认值,按照主轴的方向,从头部开始排列子元素
+            flex-end 从尾部开始排列
+            center 在主轴的方向,居中对齐
+            space-around 子元素平分剩余空间
+            space-between 先两边贴边,在平分剩余空间
+             */
+            justify-content: center;
+            /* 设置容器内子元素是否换行,
+            如果是不换行的情况,如果子元素的宽度总和超过了父元素的宽度,
+            flex容器会自动压缩子元素的宽度,
+             */
+            flex-wrap: nowrap;
+            /*  设置子元素在侧轴上的排列方式(不换行),
+            注意只有flex元素设置不换行的情况下这个属性才会生效,值有:
+            flex-start 
+            flex-end
+            center 
+            stretch 拉伸 */
+            align-items: center;
+            /* 设置子元素在侧轴上的排列方式(换行),
+            注意只有flex元素设置换行的情况下这个属性才会生效,值有:
+            flex-start 
+            flex-end
+            center 
+            space-around 子元素在侧轴平分剩余空间
+            space-between 子元素先贴两边,然后再平分剩余空间
+            stretch 设置子元素高度平分父元素高度
+             */
+            align-content: center;
+            /* 相当于同时设置了主轴和换行 */
+            flex-flow: row wrap;
+        }
+
+        .son {
+            /* 定义子元素分配剩余剩余空间,用数值来表示占用多少份
+            元素的值:flex容器*(元素的flex/所有子元素的flex)
+             */
+            flex: 1;
+            /* 控制子元素自己在侧轴上的排列方式,值有:
+            auto 表示继承flex容器得到align-items属性,如果没有父元素,则等于stretch
+            剩下的值同上 : #37 
+             */
+            align-self: auto;
+            /* 定义子元素的排列方式,值为数子
+            数值越小,排列越靠前,默认为0
+             */
+            order: 123;
+        }
+
+        h1 {
+            color: rgb(254, 78, 55);
+        }
+
+        p {
+            font-size: 25px;
+            color: rgb(245, 70, 40);
+        }
+
+        span {
+            font-size: 18px;
+            color: rgb(163, 4, 6);
+        }
+
+        .info {
+            display: block;
+            margin: 50px 0 0;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <h1>flex布局</h1>
+        <h3>父元素常见属性</h3>
+        <p>flex-direction <span>设置主轴的方向</span></p>
+        <p>justify-content <span>设置主轴上的子元素排列方式</span></p>
+        <p>flex-wrap <span>设置容器内子元素是否换行</span></p>
+        <p>align-items <span>设置子元素在侧轴上的排列方式(不换行)</span></p>
+        <p>align-content <span>设置子元素在侧轴上的排列方式(换行)</span></p>
+        <p>flex-flow <span>同时设置了主轴和换行</span></p>
+        <h3>子元素常见属性</h3>
+        <p>flex <span>定义子元素分配剩余剩余空间,用数值来表示占用多少份</span></p>
+        <p>align-self <span>控制子元素自己在侧轴上的排列方式</span></p>
+        <p>order <span>定义子元素的排列方式,值为数字,数值越小,排列越靠前</span></p>
+
+
+        <p class="info">更多详情请 [ctrl+U] 打开源码查看</p>
+    </center>
+</body>
+
+</html>
